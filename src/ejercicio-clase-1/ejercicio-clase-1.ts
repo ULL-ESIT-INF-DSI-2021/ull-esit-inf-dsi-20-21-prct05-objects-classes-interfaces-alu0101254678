@@ -11,5 +11,19 @@ export class Persona {
     this.genero = genero;
   }
 
-  
+  get_nombre() {
+    return this.nombre;
+  }
+
+  get_apellido() {
+    return this.apellido;
+  }
+
+  get_fecha_nacimiento() {
+    return this.fecha_nacimiento;
+  }
+
+  get_genero() {
+    return this.genero;
+  }
 }
