@@ -1,0 +1,6 @@
+{
+  "entryPoints": [
+    "./src/ejercicio-clase-1/persona.ts"
+  ],
+  "out": "./documentacion"
+}
