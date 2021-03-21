@@ -1,3 +1,8 @@
+/**
+ * Clase que representa a una persona, tiene los atributos indicados posteriormente,
+ * como son privados, necesitamos métodos setters y getters para obtener y modificar
+ * sus respectivos valores
+ */
 export class Persona {
   private nombre: string;
   private apellido: string;

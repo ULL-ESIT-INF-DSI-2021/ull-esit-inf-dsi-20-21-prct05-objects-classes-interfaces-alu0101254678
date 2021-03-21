@@ -1,6 +1,8 @@
 {
   "entryPoints": [
-    "./src/ejercicio-clase-1/persona.ts"
+    "./src/ejercicio-clase-1/ejercicio-clase-1",
+    "./src/ejercicio-clase-2/ejercicio-clase-2",
+    "./src/ejercicio-clase-3/ejercicio-clase-3"
   ],
   "out": "./documentacion"
 }

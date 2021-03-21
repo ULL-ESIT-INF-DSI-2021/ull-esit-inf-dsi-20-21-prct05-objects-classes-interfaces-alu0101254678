@@ -1,3 +1,8 @@
+/**
+ * Clase que almacena un pokemon, sus atributos son
+ * el nombre, el peso la altura, el tipo, el ataque,
+ * la defensa, la velocidad y la vida
+ */
 export class Pokemon {
   nombre: string;
   peso: number;

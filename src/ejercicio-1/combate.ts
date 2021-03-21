@@ -1,5 +1,8 @@
 import {Pokemon} from "./pokemon"
-
+/**
+ * Clase combate, que simula un combate entre dos pokemon
+ * tiene como atributos dos pokemon, de la clase pokemon, y dos metodos
+ */
 export class Combat {
   pokemon_1: Pokemon;
   pokemon_2: Pokemon;
@@ -9,8 +12,10 @@ export class Combat {
     this.pokemon_2 = pokemon_2;
   }
 
-  // tipo del pokemon 1, tipo del pokemon 1, ataque del pokemon 1, defensa del pokemon 2
-  // efective_Pokemon(mi_tipo: string, tipo_oponente: string, mi_ataque: number, defensa_oponente: number) {
+  /**
+   * Método de la clase que calcula el daño del pokemon 1 al pokemon 2
+   * @returns El daño del pokemon 1 al pokemon 2
+   */
 
   efective_pokemon_1_to_pokemon_2(): number {
     const super_efectivo: number = 50 * (this.pokemon_1.ataque / this.pokemon_2.defensa) * 2;
@@ -78,6 +83,10 @@ export class Combat {
     return 0;
   }
 
+  /**
+   * Método que calcula el daño que le hace el pokemon 2 al pokemon 1
+   * @returns el daño que le ha hecho el pokemon 2 al pokemon 1
+   */
   efective_pokemon_2_to_pokemon_1(): number {
     const super_efectivo: number = 50 * (this.pokemon_2.ataque / this.pokemon_1.defensa) * 2;
     const normal: number = 50 * (this.pokemon_2.ataque / this.pokemon_1.defensa);
@@ -143,7 +152,12 @@ export class Combat {
     }
     return 0;
   }
-
+  /**
+   * Método de la clase que inicia el combate de dos pokemon,
+   * el procedimiento finaliza cuando a alguno de los dos pokemon le queda
+   * vida = 0, o menor que cero
+   * @returns 
+   */
   start() {
     do {
       console.log(`${this.pokemon_1.nombre} ${this.pokemon_1.tipo} ${this.pokemon_1.ataque} ${this.pokemon_1.defensa} ${this.pokemon_1.velocidad} ${this.pokemon_1.vida}`);
@@ -158,7 +172,17 @@ export class Combat {
       console.log(`vida de pokemon 2: ${this.pokemon_2.vida}`);
       this.pokemon_1.vida -= dano_a_pokemon_1;
       console.log(`vida de pokemon 1: ${this.pokemon_1.vida}`);
-    } while (this.efective_pokemon_1_to_pokemon_2() < this.pokemon_2.vida || this.efective_pokemon_2_to_pokemon_1() < this.pokemon_1.vida);
+      if (this.pokemon_1.vida <= 0) {
+        return;
+      }
+      if (this.pokemon_2.vida <= 0) {
+        return;
+      }
+    } while (this.efective_pokemon_1_to_pokemon_2() >= this.pokemon_2.vida || this.efective_pokemon_2_to_pokemon_1() >= this.pokemon_1.vida);
   }
 }
 
+let pikachu: Pokemon = new Pokemon("pikachu", 10, 1, "electrico", 100, 50, 150, 30);
+let blastoise: Pokemon = new Pokemon("blastoise", 100, 50, "agua", 200, 100, 90, 290);
+let comate_1: Combat = new Combat(pikachu, blastoise);
+comate_1.start();

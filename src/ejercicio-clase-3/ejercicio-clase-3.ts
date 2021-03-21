@@ -1,9 +1,9 @@
 import {Persona} from '../ejercicio-clase-1/ejercicio-clase-1';
 /**
- * La clase estudiante extiende a la clase persona, asimismo esta añade un atributo
- * adicional que es correo electronico
+ * La clase profesor extiende a la clase persona, sin embargo como sucede con la clase
+ * estudiante, se añade un nuevo atributo que es el correo electronico
  */
-export class Estudiante extends Persona {
+export class Profesor extends Persona {
   private correo_electronico: string;
 
   constructor(nombre: string, apellido: string, fecha_nacimiento: number, genero: string, correo_electronico: string) {
