@@ -664,6 +664,14 @@ del mismo se puede encontrar en el [informe](https://github.com/ULL-ESIT-INF-DSI
 
 Únicamente comentamos como queda la previsualización de *index.html* y *modules.html*:
 
+![captura_index_ documentacion](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101254678/blob/master/img/index_html.png?raw=true)
+
+![captura_modules_documentacion](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101254678/blob/master/img/modules_html.png?raw=true)
+
+Accediendo a cada uno de ellos, podemos ver los comentarios que hemos escrito.
+
+## __Anexo 2: Pruebas en los ejercicios de clase__
+
 
 
 
