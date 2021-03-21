@@ -284,7 +284,7 @@ Por último, tenemos tres métodos que filtran por el campo de fecha, por la edi
 Observamos como en los tres métodos, se recibe el correspondiente parámetro y también se usa un vector auxiliar
 el cual res retorna.
 
-## __Medios de transporte__
+## __Ejercicio 3: Medios de transporte__
 En este ejercicio, hemos de construir un conjunto de clases, objetos e interfaces, que representen a los diferentes
 medios de transporte que circularán en una calle, entre estos vehículos encontramos coches, motos, trenes, guaguas, 
 patinetes, bicicletas, e incluso, podríamos considerar el peatón.
@@ -670,7 +670,7 @@ del mismo se puede encontrar en el [informe](https://github.com/ULL-ESIT-INF-DSI
 
 Accediendo a cada uno de ellos, podemos ver los comentarios que hemos escrito.
 
-## __Anexo 2: Pruebas en los ejercicios de clase__
+## __Anexo 2: *Pruebas* en los ejercicios de clase__
 Como sabemos el desarrollo dirigido por pruebas es muy importante, en este informe comentamos brevemente las pruebas realizadas para los ejercicios
 propuestos en la clase de laboratorio, la configuración e instalación se pueden consultar en el [informe](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct04-arrays-tuples-enums-alu0101254678/blob/master/docs/index.md) de la anterior práctica.
 
@@ -744,7 +744,7 @@ describe('Test que accede a los atributos de la clase estudiante', () => {
 Escribimos un conjunto de pruebas, y posteriormente hacemos varios *expect* para comprobar el correcto funcionamiento, y
 al ejecutarse las pruebas vemos que son correctas.
 
-![]()
+![captura_conjunto_pruebas](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101254678/blob/master/img/captura_pruebas.png?raw=true)
 
 Por último las pruebas del ejercicio 4 son algo distintas a las anteriores puesto que trabajamos con vectores:
 
@@ -792,9 +792,11 @@ a uno de sus atributos internos, el género, y una instancia.
 Como los métodos que imprimen no devuelven nada, no se pueden analizar de esta forma con las pruebas, pero
 mostramos una captura de la ejecución:
 
-![]()
+![captura_ejecucion](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101254678/blob/master/img/captura_ejecuci%C3%B3n.png?raw=true)
 
+## __Conclusiones__
 
+## __Bibliografía__
 
 
 
