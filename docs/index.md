@@ -583,7 +583,7 @@ No necesitamos implementar los métodos anteriores, solamente aquel que manipula
 Este ejercicio es muy parecido al anterior, solo que ahora trabajamos con profesores y no con estudiantes, y también añadimos
 el atributo *correo electronico*, a continuación mostramos el código:
 
-```
+```TypeScript
 import {Persona} from '../ejercicio-clase-1/ejercicio-clase-1';
 /**
  * La clase profesor extiende a la clase persona, sin embargo como sucede con la clase
@@ -609,6 +609,62 @@ export class Profesor extends Persona {
 ```
 No lo hemos mencionado anteriormente, pero el correo electronico, también es un atributo privado, por lo tanto, es necesario para
 acceder al mismo, declarar la función *get*, y para modificarlo, la función *set*.
+
+## __Ejercicio de clase 4__
+
+En este último ejercicio propuesto en la clase de prácticas lo que deberemos hacer es crear una clase asignatura, que hace 
+que un conjunto de profesores y alumnos impartan o estudien una asignatura, respectivamente.
+
+Entonces, esta nueva clase, tendrá como atributos un vector de profesores, un vector de estudiantes, y una cadena de caracteres
+que representa a la propia asignatura.
+
+```
+export class Asignatura {
+  vector_estudiantes: Array<Estudiante>;
+  vector_profesores: Array<Profesor>;
+  asignatura: string;
+
+  constructor(vector_estudiantes: Array<Estudiante>, vector_profesores: Array<Profesor>, asignatura: string) {
+    this.vector_estudiantes = vector_estudiantes;
+    this.vector_profesores = vector_profesores;
+    this.asignatura = asignatura;
+  }
+```
+
+Asimismo, también dispondrá de un método que se encargará de imprimir los valores del vector de estudiantes, esto es, 
+los estudiantes que cursan una determinada asignatura:
+
+```TypeScript
+  print_estudiantes() {
+    console.log(`La asignatura ${this.asignatura} es estudiada por los alumnos:`);
+    console.table(this.vector_estudiantes);
+    /* for (let indice = 0; indice < this.vector_estudiantes.length; indice ++) {
+      console.log(this.vector_estudiantes[indice].get_nombre());
+    }*/
+  }
+```
+
+Y lo mismo sucede con los profesores:
+
+```TypeScript
+  print_profesores() {
+    console.log(`La asignatura ${this.asignatura} es impartida por los profesores:`);
+    console.table(this.vector_profesores);
+    /* for (let indice = 0; indice < this.vector_profesores.length; indice ++) {
+      console.log(this.vector_profesores[indice].get_nombre());
+    }*/
+  }
+```
+Como observamos en los dos métodos, optamos por imprimir los valores e una tabla, pero también podríamos haberlo
+realizado con *console.log()*.
+
+## __Anexo 1: Comentarios con *typedoc*__
+En esta práctica se ha hecho uso de typedoc, para el desarrollo de los comentarios de esta práctica, la configuración e instalación
+del mismo se puede encontrar en el [informe](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct04-arrays-tuples-enums-alu0101254678/blob/master/docs/index.md) de la práctica 4.
+
+Únicamente comentamos como queda la previsualización de *index.html* y *modules.html*:
+
+
 
 
 
