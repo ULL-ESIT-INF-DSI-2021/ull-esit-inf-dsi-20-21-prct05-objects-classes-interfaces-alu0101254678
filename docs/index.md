@@ -671,6 +671,131 @@ del mismo se puede encontrar en el [informe](https://github.com/ULL-ESIT-INF-DSI
 Accediendo a cada uno de ellos, podemos ver los comentarios que hemos escrito.
 
 ## __Anexo 2: Pruebas en los ejercicios de clase__
+Como sabemos el desarrollo dirigido por pruebas es muy importante, en este informe comentamos brevemente las pruebas realizadas para los ejercicios
+propuestos en la clase de laboratorio, la configuración e instalación se pueden consultar en el [informe](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct04-arrays-tuples-enums-alu0101254678/blob/master/docs/index.md) de la anterior práctica.
+
+La estructura de los ficheros contenidos en el directorio /test debe de ser algo parecido al de /src, comentamos el ejercicio 1:
+
+```TypeScript
+import 'mocha';
+import {expect} from 'chai';
+import {Persona} from '../../src/ejercicio-clase-1/ejercicio-clase-1';
+
+describe('Test que accede a los atributos de la clase persona', () => {
+  it('Se accede al nombre, apellido, fecha de nacimiento, genero', () => {
+    // una variable con mi nombre, para la prueba
+    let persona_1: Persona = new Persona("yago", "perez", 2000, "hombre");
+
+    expect(persona_1.get_nombre()).to.be.equal('yago');
+    expect(persona_1.get_apellido()).to.be.equal('perez');
+    expect(persona_1.get_fecha_nacimiento()).to.be.equal(2000);
+    expect(persona_1.get_fecha_nacimiento()).not.to.be.equal(1999);
+    expect(persona_1.get_genero()).to.be.equal('hombre');
+  });
+
+  it('Se modifica el nombre, apellido, fecha de nacimiento, genero', () => {
+    // una variable con mi nombre, para la prueba
+    let persona_1: Persona = new Persona("yago", "perez", 2000, "hombre");
+
+    expect(persona_1.set_nombre('kevin')).to.be.equal('kevin');
+    expect(persona_1.set_apellido('alonso')).to.be.equal('alonso');
+    expect(persona_1.set_fecha_nacimiento(2000)).to.be.equal(2000);
+    expect(persona_1.set_genero('hombre')).to.be.equal('hombre');
+  });
+
+});
+```
+Tenemos que comprobar que realmente se accede a los atributos, y se pueden modificar, con el método *.to.be.equal* es posible
+realizar esa comprobación, si accedemos correctamente eso quiere decir que el objeto se creó correctamente.
+
+Las pruebas para el ejercicio 2 y el ejercicio 3 son bastante parecidas:
+
+```TypeScript
+import 'mocha';
+import {expect} from 'chai';
+import {Estudiante} from '../../src/ejercicio-clase-2/ejercicio-clase-2';
+
+describe('Test que accede a los atributos de la clase estudiante', () => {
+  it('Se accede al nombre, apellido, fecha de nacimiento, genero, correo electronico', () => {
+    // una variable con mi nombre, para la prueba
+    let estudiante_1: Estudiante = new Estudiante('yago', 'perez', 2000, 'hombre', 'yagoy90@gmail.com');
+
+    expect(estudiante_1.get_nombre()).to.be.equal('yago');
+    expect(estudiante_1.get_apellido()).to.be.equal('perez');
+    expect(estudiante_1.get_fecha_nacimiento()).to.be.equal(2000);
+    expect(estudiante_1.get_fecha_nacimiento()).not.to.be.equal(1999);
+    expect(estudiante_1.get_genero()).to.be.equal('hombre');
+    expect(estudiante_1.get_correo_electronico()).to.be.equal('yagoy90@gmail.com');
+  });
+
+  it('Se modifica el nombre, apellido, fecha de nacimiento, genero, correo electronico', () => {
+    // una variable con mi nombre, para la prueba
+    let estudiante_1: Estudiante = new Estudiante('yago', 'perez', 2000, 'hombre', 'yagoy90@gmail.com');
+
+    expect(estudiante_1.set_nombre('kevin')).to.be.equal('kevin');
+    expect(estudiante_1.set_apellido('alonso')).to.be.equal('alonso');
+    expect(estudiante_1.set_fecha_nacimiento(2000)).to.be.equal(2000);
+    expect(estudiante_1.set_fecha_nacimiento(2000)).not.to.be.equal(1999);
+    expect(estudiante_1.set_genero('hombre')).to.be.equal('hombre');
+    expect(estudiante_1.set_correo_electronico('yagoy90@hotmail.com')).to.be.equal('yagoy90@hotmail.com');
+  });
+});
+```
+Escribimos un conjunto de pruebas, y posteriormente hacemos varios *expect* para comprobar el correcto funcionamiento, y
+al ejecutarse las pruebas vemos que son correctas.
+
+![]()
+
+Por último las pruebas del ejercicio 4 son algo distintas a las anteriores puesto que trabajamos con vectores:
+
+```TypeScript
+import 'mocha';
+import {expect} from 'chai';
+import {Asignatura} from '../../src/ejercicio-clase-4/ejercicio-clase-4';
+import {Estudiante} from '../../src/ejercicio-clase-2/ejercicio-clase-2';
+import {Profesor} from '../../src/ejercicio-clase-3/ejercicio-clase-3';
+
+describe('Test que accede a los atributos de la clase asignatura', () => {
+  it('Se accede al vector de estudiantes y de profesores', () => {
+    // dos variables para el vector de estudiantes, y dos para los profesores
+    let estudiante_1: Estudiante = new Estudiante('yago', 'perez', 2000, 'hombre', 'yagoy90@gmail.com');
+    let estudiante_2: Estudiante = new Estudiante('katia', 'gonzalez', 2001, 'mujer', 'katia90@gmail.com');
+
+    let profesor_1: Profesor = new Profesor('jesus', 'martin', 1970, 'hombre', 'jessus90@gmail.com');
+    let profesor_2: Profesor = new Profesor('marta', 'gonzalez', 1980, 'mujer', 'marta90@gmail.com');
+
+    let asignatura: string = 'Matematicas';
+
+    let vector_estudiantes: Array<Estudiante> = [estudiante_1, estudiante_2];
+    let vector_profesores: Array<Profesor> = [profesor_1, profesor_2];
+
+    let asignatura_1: Asignatura = new Asignatura(vector_estudiantes, vector_profesores, asignatura);
+
+    expect(asignatura_1.asignatura).to.be.equal('Matematicas');
+    expect(asignatura_1.vector_estudiantes.includes(estudiante_1)).to.be.equal(true);
+    expect(asignatura_1.vector_estudiantes.includes(estudiante_2)).to.be.equal(true);
+
+    expect(asignatura_1.vector_profesores.includes(profesor_1)).to.be.equal(true);
+    expect(asignatura_1.vector_profesores.includes(profesor_2)).to.be.equal(true);
+
+    expect(asignatura_1.vector_estudiantes[0].get_genero()).to.be.equal('hombre');
+
+    expect(asignatura_1).instanceOf(Asignatura);
+
+  });
+});
+```
+Creamos una asginatura con dos vectores y el parámetro que corresponde a la asignatura en sí, y comprobamos
+si el vector incluye al estudiante uno y al estudiante dos, así como con los profesores, así como un acceso
+a uno de sus atributos internos, el género, y una instancia.
+
+Como los métodos que imprimen no devuelven nada, no se pueden analizar de esta forma con las pruebas, pero
+mostramos una captura de la ejecución:
+
+![]()
+
+
+
 
 
 
