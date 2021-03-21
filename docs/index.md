@@ -146,7 +146,7 @@ sea menor que su vida.
 Los gestores bibliográficos se usan para almacenar, consultar, buscar y exportar artículos de investigación.También permiten
 filtrar el contenido en base a unos valores especificados por el usuario.
 
-Entonces, lo que deberemos hacer será un conjunto de clase, objetos o interfaces que represente esta premisa.
+Entonces, lo que deberemos hacer será un conjunto de clases, objetos o interfaces que representen esta premisa.
 
 Lo primero que haremos será crear la clase *articulo_investigación*, que gestione un único artículo de investigación:
 
@@ -289,7 +289,7 @@ En este ejercicio, hemos de construir un conjunto de clases, objetos e interface
 medios de transporte que circularán en una calle, entre estos vehículos encontramos coches, motos, trenes, guaguas, 
 patinetes, bicicletas, e incluso, podríamos considerar el peatón.
 
-Lo primero que deberemos crear una interfaz llamada *movable*, que incluya las propiedades y métodos necesarios para 
+Lo primero que deberemos hacer es crear una interfaz llamada *movable*, que incluya las propiedades y métodos necesarios para 
 implementar cualquier clase que represente a un objeto que pueda moverse:
 
 ```TypeScript
@@ -455,7 +455,7 @@ El siguiente método elimina, un elemento de la calle, es decir, un vehículo qu
   }
 ```
 
-Tenemos el caso anterior, no sabemos de antemano quñe vamos a elimina, por lo tanto el objeto puede ser un coche, una moto, un tren,
+Tenemos el caso anterior, no sabemos de antemano qué vamos a eliminar, por lo tanto el objeto puede ser un coche, una moto, un tren,
 luego, con el método *splice* incluido en *vector* eliminamos un único elemento, ya que se lo estamos indicando con el segundo parámetro pasado a la función,
 y el elemento en cuestión se accede *index*, y el *objeto*.
 
@@ -575,7 +575,7 @@ export class Estudiante extends Persona {
 }
 ```
 Importamos la clase persona, y marcamos a la clase como *extends*, de la clase Persona, para que sepa, que
-queremos heredar de ella y luego con el método *super*, accedemos al cosntructor de la clase padre.
+queremos heredar de ella y luego con el método *super*, accedemos al constructor de la clase padre.
 
 No necesitamos implementar los métodos anteriores, solamente aquel que manipula el atributo, *correo electrónico*.
 
@@ -706,7 +706,7 @@ describe('Test que accede a los atributos de la clase persona', () => {
 });
 ```
 Tenemos que comprobar que realmente se accede a los atributos, y se pueden modificar, con el método *.to.be.equal* es posible
-realizar esa comprobación, si accedemos correctamente eso quiere decir que el objeto se creó correctamente.
+realizar esa comprobación, si accedemos correctamente eso quiere decir que el objeto se creó adecuadamente.
 
 Las pruebas para el ejercicio 2 y el ejercicio 3 son bastante parecidas:
 
@@ -795,9 +795,47 @@ mostramos una captura de la ejecución:
 ![captura_ejecucion](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101254678/blob/master/img/captura_ejecuci%C3%B3n.png?raw=true)
 
 ## __Conclusiones__
+En anteriores asignaturas los conceptos tratados en esta práctica ya se habían abordado con detenimiento, en Algoritmos y Estructuras de Datos,
+y en Lenguajes y Paradigmas de Programación, sin embargo, fueron en lenguajes C++ y Ruby, aunque considero que en TypeScript la esencia
+es más o menos parecidas.
+
+El desarrollo de los informes no es la tarea más complicada, pero aún así tienes que plasmar lo que has hecho en una semana en un informe, y
+tienes que resumir y abordar los aspectos más importantes, y llevar a cabo un buen seguimiento y entender los apuntes.
+
+Concretamente, en esta práctica encontramos dificultades a la hora de desarrollar puebas para algunas clases, cuyos métodos no retornaban
+nada.
+
+Destaco otro dato, y es que considero que TypeScript ofrece flexibilidad a la hora de trabajar con diferentes conceptos, y prueba de ello
+son las prácticas que hemos realizado hasta ahora.
+
+Un pequeño apunte es que en la clase de prácticas,en el laboratorio ha habido problemas con el wifi de la universidad y ha dificultado la
+reolución de los ejercicios, o por lo menos retrasado.
 
 ## __Bibliografía__
 
+* ¿Cómo se ha estructurado el proyecto?
+
+<https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html>
+
+* Documentación sobre *TypeDoc:*
+
+<https://typedoc.org/guides/installation/>
+
+* Documentación sobre *Mocha:*
+
+<https://mochajs.org/#getting-started>
+
+* Documentación sobre *Chai: (Guía de Expect:)*
+
+<https://www.chaijs.com/guide/styles/#expect>
+
+* Apuntes de clase sobre los conceptos de *clase*, *objeto* e *interfaz*
+
+<https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-objects-classes-interfaces.html>
+
+* ¿Cómo se usa el método *console.table()?:*
+
+<https://developer.mozilla.org/es/docs/Web/API/Console/table>
 
 
 
