@@ -13,7 +13,8 @@ export class Pokedex {
   }
 
   /**
-   * Este es el unico método que tiene la clase
+   * Este es el unico método que tiene la clase, y muestra la coleccion
+   * de pokemon
    */
   mostrar_Pokemon() {
     for (let indice = 0; indice < this.vector_Pokemon.length; indice ++) {

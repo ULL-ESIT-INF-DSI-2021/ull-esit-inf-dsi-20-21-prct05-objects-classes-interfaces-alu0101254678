@@ -184,5 +184,5 @@ export class Combat {
 
 let pikachu: Pokemon = new Pokemon("pikachu", 10, 1, "electrico", 100, 50, 150, 30);
 let blastoise: Pokemon = new Pokemon("blastoise", 100, 50, "agua", 200, 100, 90, 290);
-let comate_1: Combat = new Combat(pikachu, blastoise);
-comate_1.start();
+let combate_1: Combat = new Combat(pikachu, blastoise);
+combate_1.start();
